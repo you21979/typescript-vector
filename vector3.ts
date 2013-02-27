@@ -25,17 +25,28 @@ export module Vec3{
         public cross(v:IVec3):IVec3{
             return cross(this, v);
         }
-        public add(v1:IVec3):void{
-            var w:IVec3 = additional(this,v1);
-            this.x = w.x;
-            this.y = w.y;
-            this.z = w.z;
+        public add(v1:IVec3):IVec3{
+            return additional(this,v1);
         }
-        public sub(v1:IVec3):void{
-            var w:IVec3 = subtract(this,v1);
-            this.x = w.x;
-            this.y = w.y;
-            this.z = w.z;
+        public sub(v1:IVec3):IVec3{
+            return subtract(this,v1);
+        }
+        public mul(v1:IVec3):IVec3{
+            return multiplication(this,v1);
+        }
+        public div(v1:IVec3):IVec3{
+            return division(this,v1);
+        }
+        public muls(s:number):IVec3{
+            return muls(this,s);
+        }
+        public divs(s:number):IVec3{
+            return divs(this,s);
+        }
+        public update(v1:IVec3):void{
+            this.x = v1.x;
+            this.y = v1.y;
+            this.z = v1.z;
         }
     }
     /**
