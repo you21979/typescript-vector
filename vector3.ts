@@ -6,13 +6,28 @@ export interface IVec3{
     y:number;
     z:number;
 }
-export module Vector3{
+export module Vec3{
     export class Vec implements IVec3{
         constructor(
             public x:number,
             public y:number,
             public z:number
         ){}
+        public clone():Vec{
+            return createVector(this);
+        }
+        public distance():number{
+            return distance(this);
+        }
+        public normalize():IVec3{
+            return normalize(this);
+        }
+        public cross(v:IVec3):IVec3{
+            return cross(this, v);
+        }
+        public add(v1:IVec3):void{
+            
+        }
     }
     /**
      *  新規にvec3を作成する
@@ -33,7 +48,7 @@ export module Vector3{
     /**
      *  足し算
      */
-    export function add(v1:IVec3,v2:IVec3):IVec3{
+    export function additional(v1:IVec3,v2:IVec3):IVec3{
         return {
             x : v1.x + v2.x,
             y : v1.y + v2.y,
@@ -43,7 +58,7 @@ export module Vector3{
     /**
      *  引き算
      */
-    export function sub(v1:IVec3,v2:IVec3):IVec3{
+    export function subtract(v1:IVec3,v2:IVec3):IVec3{
         return {
             x : v1.x - v2.x,
             y : v1.y - v2.y,
@@ -53,7 +68,7 @@ export module Vector3{
     /**
      *  掛け算
      */
-    export function mul(v1:IVec3,v2:IVec3):IVec3{
+    export function multiplication(v1:IVec3,v2:IVec3):IVec3{
         return {
             x:v1.x * v2.x,
             y:v1.y * v2.y,
@@ -63,7 +78,7 @@ export module Vector3{
     /**
      *  割算
      */
-    export function div(v1:IVec3,v2:IVec3):IVec3{
+    export function division(v1:IVec3,v2:IVec3):IVec3{
         return {
             x:v1.x / v2.x,
             y:v1.y / v2.y,
