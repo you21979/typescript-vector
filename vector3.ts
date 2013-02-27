@@ -26,7 +26,16 @@ export module Vec3{
             return cross(this, v);
         }
         public add(v1:IVec3):void{
-            
+            var w:IVec3 = additional(this,v1);
+            this.x = w.x;
+            this.y = w.y;
+            this.z = w.z;
+        }
+        public sub(v1:IVec3):void{
+            var w:IVec3 = subtract(this,v1);
+            this.x = w.x;
+            this.y = w.y;
+            this.z = w.z;
         }
     }
     /**
